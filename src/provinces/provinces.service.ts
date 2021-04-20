@@ -10,11 +10,11 @@ export class ProvincesService {
     private provinceModel: Model<ProvinceDocument>,
   ) {}
 
-  async getAll():Promise<Province[]> {
-      return this.provinceModel.find().exec();
+  async getAll(): Promise<Province[]> {
+    return this.provinceModel.find().exec();
   }
 
-  async getProvince(province_id:string):Promise<Province>{
-      return this.provinceModel.findById(province_id).exec();
+  async getProvince(province_id: string): Promise<Province> {
+    return this.provinceModel.findOne({ province_id: province_id }).exec();
   }
 }
