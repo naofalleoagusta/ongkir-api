@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { CitiesModule } from "./cities/cities.module";
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
@@ -13,6 +14,7 @@ import { ProvincesModule } from './provinces/provinces.module';
       load: [config],
     }),
     ProvincesModule,
+    CitiesModule,
     MongooseModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: async (configService: ConfigService) => ({
