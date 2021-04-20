@@ -11,4 +11,8 @@ export class CitiesService {
   async findAll(): Promise<City[]> {
     return this.cityModel.find().exec();
   }
+
+  async findCity(city_id: string): Promise<City> {
+    return this.cityModel.findOne({ city_id: city_id }).exec();
+  }
 }

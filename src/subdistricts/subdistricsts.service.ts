@@ -15,6 +15,6 @@ export class SubdistrictsService {
   }
 
   async getSubdistrict(subdistrict_id:string):Promise<Subdistrict>{
-      return this.subdistrictModel.findById(subdistrict_id).exec()
+      return this.subdistrictModel.findOne({subdistrict_id:subdistrict_id}).exec()
   }
 }
