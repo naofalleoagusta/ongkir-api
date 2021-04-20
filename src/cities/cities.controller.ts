@@ -3,7 +3,7 @@ import { City } from './cities.schema';
 import { CitiesService } from './cities.service';
 
 @Controller('city')
-export class CityController {
+export class CitiesController {
   constructor(private citiesService: CitiesService) {}
 
   @Get()
